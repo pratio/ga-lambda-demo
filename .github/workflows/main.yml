@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Lambda Demo Pipeline
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  continuous-integration:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -61,7 +61,7 @@ jobs:
           path: api.zip
 
 
-  continuous-deployment:
+  cd:
     runs-on: ubuntu-latest
     needs: [continuous-integration]
     if: github.ref == 'refs/heads/main'
